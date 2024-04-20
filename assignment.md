@@ -2,13 +2,12 @@
 Use `git push`, `git fetch`, and `get pull` to manage code between your local repository and a remote repository.
 
 ### Git push
-`git push` sent changes from a local branch to a remote repo
-`git push` takes our current branch, and checks to see whether or not there is a tracking branch for a remote repository connected to it. If so, our changes are taken from our branch and pushed to the remote branch. This is how code is shared with a remote repository, you can think of it as "make the remote branch resemble my local branch". This will fail if the remote branch has diverged from your local branch: if not all the commits in the remote branch are in your local branch. When this happens, your local branch needs to be synchronized with the remote branch with git pull or git fetch and git merge.
+Use `git push` to send changes from your local branch to a remote repository. If the remote branch has new changes that you haven't downloaded locally then the push will fail. To avoid this, synchronize your local branch with the remote repository using `git pull` or `git fetch` followed by `get merge`.
 
 ### Git fetch
-`git fetch` get changes from a remote repo into your tracking branch
-git fetch` again takes our current branch, and checks to see if there is a tracking branch. If so, it looks for changes in the remote branch, and pulls them into the tracking branch. It does not change your local branch. To do that, you'll need to do `git merge origin/master` (for the "master" branch) to merge those changes into your branch - probably also called "master".
+Use `git fetch` to download changes from a remote repository into your tracking branch without merging them in your local branch. This gives you a chance to review the changes before merging them. To merge these changes into your local branch, use `git merge`.
 
 ### Git pull
-`git pull` will get changes from a remote branch into your tracking branch and merge them into a local branch
-Often `git push` and `git pull` are described as equivalent. This isn't entirely correct, since under the hood `git pull` does two things. ``git pull` simply does a `git fetch` followed immediately by `git merge`. This is often what we desire to do, but some people prefer to use git fetch followed by git merge to make sure they understand the changes they are merging into their branch before the merge happens.
+`git pull` combines `git fetch` and `git merge` into a single command by downloading changes from a remote repository and merging them into your local branch. 
+
+By understanding the differences between `git push`, `git pull`, and `git fetch`, you can effectively manage code collaboration between local and remote repositories.
