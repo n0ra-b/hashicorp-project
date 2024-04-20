@@ -1,4 +1,5 @@
 ## Understand git commands: push, fetch, and pull
+Use `git push`, `git fetch`, and `get pull` to manage code between your local repository and a remote repository.
 
 - `git push` - sent changes from a local branch to a remote repo
 - `git fetch` - get changes from a remote repo into your tracking branch
